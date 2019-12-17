@@ -1,7 +1,7 @@
 import groovy.json.JsonBuilder
 
 node('jenkins-jenkins-slave') {
-  withEnv(['REPOSITORY=miau2',
+  withEnv(['REPOSITORY=troopers',
   'GIT_ACCOUNT=https://github.com/mawinkler']) {
     stage('Pull Image from Git') {
       script {
@@ -16,7 +16,7 @@ node('jenkins-jenkins-slave') {
     parallel (
       "Test": {
         //script {
-        //  sh "python tests/test_flask_app.py"
+        //  sh "python tests/test_app.py"
         //}
         echo 'All functional tests passed'
       },

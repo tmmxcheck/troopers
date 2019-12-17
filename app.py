@@ -3,7 +3,7 @@ import random
 
 app = Flask(__name__)
 
-# list of cat images
+# list of images
 images = [
     "photo-1472457847783-3d10540b03d7.jpeg",
     "photo-1472457897821-70d3819a0e24.jpeg",
