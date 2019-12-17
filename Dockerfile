@@ -1,17 +1,14 @@
 # base image
 FROM alpine:3.9
 
-# Install python 3 and pip
-RUN apk add --update python3
+WORKDIR /usr/src/app
+# Copy files required for the app to run, see .dockerignore
+COPY . /usr/src/app
 
-# Install Python modules needed by the Python app
-COPY requirements.txt /usr/src/app/
-RUN pip3 install --no-cache-dir -r /usr/src/app/requirements.txt
-
-# Copy files required for the app to run
-COPY app.py /usr/src/app/
-COPY static /usr/src/app/static/
-COPY templates/index.html /usr/src/app/templates/
+# Install python and pip
+RUN apk add --update --no-cache \
+    python3 \
+    && pip3 install --no-cache-dir -r /usr/src/app/requirements.txt
 
 # Tell the port number the container should expose
 EXPOSE 5000
