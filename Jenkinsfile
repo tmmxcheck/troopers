@@ -5,7 +5,7 @@ node('jenkins-jenkins-slave') {
   'GIT_ACCOUNT=https://github.com/mawinkler']) {
     stage('Pull Image from Git') {
       script {
-        git "${GIT_ACCOUNT}/${REPOSITORY}.git"
+        git (url: "${GIT_ACCOUNT}/${REPOSITORY}.git", credentialsId: "github-auth")
       }
     }
     stage('Build Image') {
