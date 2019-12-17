@@ -5,10 +5,16 @@ app = Flask(__name__)
 
 # list of cat images
 images = [
-    "https://img.buzzfeed.com/buzzfeed-static/static/2013-10/enhanced/webdr06/15/10/anigif_enhanced-buzz-1376-1381846217-0.gif",
-    "https://img.buzzfeed.com/buzzfeed-static/static/2013-10/enhanced/webdr06/15/10/anigif_enhanced-buzz-29111-1381845968-0.gif",
-    "https://img.buzzfeed.com/buzzfeed-static/static/2013-10/enhanced/webdr05/15/9/anigif_enhanced-buzz-26358-1381845043-13.gif",
-    "http://www.catgifpage.com/gifs/284.gif"
+    "photo-1472457847783-3d10540b03d7.jpeg",
+    "photo-1472457897821-70d3819a0e24.jpeg",
+    "photo-1472457974886-0ebcd59440cc.jpeg",
+    "photo-1484656551321-a1161420a2a0.jpeg",
+    "photo-1484824823018-c36f00489002.jpeg",
+    "photo-1518331368925-fd8d678778e0.jpeg",
+    "photo-1518331483807-f6adb0e1ad23.jpeg",
+    "photo-1544816565-aa8c1166648f.jpeg",
+    "photo-1547700055-b61cacebece9.jpeg",
+    "photo-1558492426-df14e290aefa.jpeg"
 ]
 
 @app.route('/')
