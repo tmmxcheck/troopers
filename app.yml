@@ -3,35 +3,35 @@ kind: Service
 metadata:
   annotations:
     service.alpha.kubernetes.io/tolerate-unready-endpoints: "true"
-  name: miau
+  name: troopers
   labels:
-    app: miau
+    app: troopers
 spec:
   type: NodePort
   ports:
   - port: 5000
-    name: miau
+    name: troopers
     targetPort: 5000
     nodePort: 30100
   selector:
-    app: miau
+    app: troopers
 ---
 apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
   labels:
-    app: miau
-  name: miau
+    app: troopers
+  name: troopers
 spec:
   replicas: 1
   template:
     metadata:
       labels:
-        app: miau
+        app: troopers
     spec:
       containers:
-      - name: miau
-        image: mawinkler/miau2:latest
+      - name: troopers
+        image: mawinkler/troopers:latest
         imagePullPolicy: Always
         ports:
         - containerPort: 5000
