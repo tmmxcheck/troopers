@@ -10,7 +10,7 @@ node('jenkins-jenkins-slave') {
     }
     stage('Build Image') {
       script {
-        dbuild = docker.build("mawinkler/${REPOSITORY}:$BUILD_NUMBER")
+        dbuild = docker.build("${REPOSITORY}:$BUILD_NUMBER")
       }
     }
     parallel (
@@ -22,7 +22,7 @@ node('jenkins-jenkins-slave') {
       },
       "Check Image (pre-Registry)": {
         smartcheckScan([
-          imageName: "mawinkler/${REPOSITORY}:$BUILD_NUMBER",
+          imageName: "${REPOSITORY}:$BUILD_NUMBER",
           smartcheckHost: "${DSSC_SERVICE}",
           smartcheckCredentialsId: "smartcheck-auth",
           insecureSkipTLSVerify: true,

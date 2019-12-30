@@ -31,7 +31,7 @@ spec:
     spec:
       containers:
       - name: troopers
-        image: $K8S_REGISTRY/troopers/troopers:latest
+        image: $K8S_REGISTRY/troopers:latest
         imagePullPolicy: Always
         ports:
         - containerPort: 5000
