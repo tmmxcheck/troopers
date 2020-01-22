@@ -1,5 +1,5 @@
 # base image
-FROM alpine:latest
+FROM alpine:3.10
 
 WORKDIR /usr/src/app
 # Copy files required for the app to run, see .dockerignore
