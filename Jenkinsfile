@@ -2,10 +2,10 @@ import groovy.json.JsonBuilder
 
 node('jenkins-jenkins-slave') {
   withEnv(['REPOSITORY=troopers',
-  'GIT_ACCOUNT=https://github.com/mawinkler']) {
+  'GIT_ACCOUNT=https://github.com/mawinkler2']) {
     stage('Pull Image from Git') {
       script {
-        git (url: "${GIT_ACCOUNT}/${REPOSITORY}.git", credentialsId: "github-auth")
+        git (url: "${scm.userRemoteConfigs[0].url}/${REPOSITORY}.git", credentialsId: "github-auth")
       }
     }
     stage('Build Image') {
