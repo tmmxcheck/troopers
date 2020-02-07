@@ -3,7 +3,7 @@ FROM alpine:3.9.2
 
 WORKDIR /usr/src/app
 # Copy files required for the app to run, see .dockerignore
-#COPY . /usr/src/app
+COPY . /usr/src/app
 
 # Install python and pip
 RUN apk add --update --no-cache \
